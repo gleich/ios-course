@@ -18,11 +18,11 @@ class ViewController: UIViewController {
         "Hard": 12,
     ]
     var secondsPassed = 0
-    var totalSeconds = 0
+    var totalMinutes = 0
     var timer = Timer()
 
     @IBAction func hardnessSelected(_ sender: UIButton) {
-        totalSeconds = eggTimes[sender.currentTitle!]! * 60
+        totalMinutes = eggTimes[sender.currentTitle!]! * 60
 
         timer.invalidate()
         timer = Timer.scheduledTimer(
@@ -35,8 +35,8 @@ class ViewController: UIViewController {
     }
 
     @objc func updateTimer() {
-        if secondsPassed < totalSeconds {
-            let progress = Float(secondsPassed) / Float(totalSeconds)
+        if secondsPassed < totalMinutes {
+            let progress = Float(secondsPassed) / Float(totalMinutes)
             progressBar.progress = progress
             print(progress)
             secondsPassed += 1
