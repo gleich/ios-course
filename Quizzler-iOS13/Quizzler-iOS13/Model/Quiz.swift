@@ -1,19 +1,13 @@
 //
-//  ViewController.swift
+//  Quiz.swift
 //  Quizzler-iOS13
 //
-//  Created by Matthew Gleich on 11/10/2020
+//  Created by Matthew Gleich on 11/15/20.
 //
 
-import UIKit
+import Foundation
 
-class ViewController: UIViewController {
-    
-    @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var trueButton: UIButton!
-    @IBOutlet weak var falseButton: UIButton!
-    
+struct Quiz {
     let quiz = [
         Question(q: "A slug's blood is green.", a: "True"),
         Question(q: "Approximately one quarter of human bones are in the feet.", a: "True"),
@@ -29,38 +23,25 @@ class ViewController: UIViewController {
         Question(q: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.", a: "True")
         
     ]
-    var currentQuestion = 0
+    var questionNumber = 0
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setQuestion()
+    func checkAnwser(_ userAnswer: String) -> Bool {
+        return userAnswer == quiz[questionNumber].answer
     }
     
-    @IBAction func answerButtonPressed(_ sender: UIButton) {
-        let userAnswer = sender.currentTitle!
-        let actualAnswer = quiz[currentQuestion].answer
-        
-        if userAnswer == actualAnswer {
-            sender.backgroundColor = UIColor.green
+    func getQuestionText() -> String {
+        return quiz[questionNumber].text
+    }
+    
+    func getProgress() -> Float {
+        return Float(questionNumber + 1) / Float(quiz.count)
+    }
+    
+    mutating func nextQuestion() {
+        if questionNumber >= quiz.count - 1 {
+            questionNumber = 0
         } else {
-            sender.backgroundColor = UIColor.red
+            questionNumber += 1
         }
-        
-        if currentQuestion >= quiz.count-1 {
-            currentQuestion = 0
-        } else {
-            currentQuestion += 1
-        }
-        
-        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(setQuestion), userInfo: nil, repeats: false)
     }
-    
-    @objc func setQuestion() {
-        questionLabel.text = quiz[currentQuestion].text
-        trueButton.backgroundColor = UIColor.clear
-        falseButton.backgroundColor = UIColor.clear
-        progressBar.progress = Float(currentQuestion + 1) / Float(quiz.count)
-    }
-    
 }
-
