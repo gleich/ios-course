@@ -24,9 +24,18 @@ struct Quiz {
         
     ]
     var questionNumber = 0
+    var score = 0
     
-    func checkAnwser(_ userAnswer: String) -> Bool {
-        return userAnswer == quiz[questionNumber].answer
+    mutating func checkAnwser(_ userAnswer: String) -> Bool {
+        if userAnswer == quiz[questionNumber].answer {
+            score += 1
+            return true
+        }
+        return false
+    }
+    
+    func getScore() -> Int {
+        return score
     }
     
     func getQuestionText() -> String {
@@ -40,6 +49,7 @@ struct Quiz {
     mutating func nextQuestion() {
         if questionNumber >= quiz.count - 1 {
             questionNumber = 0
+            score = 0
         } else {
             questionNumber += 1
         }
