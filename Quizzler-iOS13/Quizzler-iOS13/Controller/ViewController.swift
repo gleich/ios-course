@@ -12,8 +12,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var trueButton: UIButton!
-    @IBOutlet weak var falseButton: UIButton!
+    @IBOutlet weak var option1: UIButton!
+    @IBOutlet weak var option2: UIButton!
+    @IBOutlet weak var option3: UIButton!
     
     var quiz = Quiz()
     
@@ -43,8 +44,16 @@ class ViewController: UIViewController {
         progressBar.progress = quiz.getProgress()
         scoreLabel.text = "Score \(quiz.getScore())"
         
-        trueButton.backgroundColor = UIColor.clear
-        falseButton.backgroundColor = UIColor.clear
+        // Setting options
+        let options = quiz.getOptions()
+        option1.setTitle(options[0], for: .normal)
+        option2.setTitle(options[1], for: .normal)
+        option3.setTitle(options[2], for: .normal)
+        
+        
+        option1.backgroundColor = UIColor.clear
+        option2.backgroundColor = UIColor.clear
+        option3.backgroundColor = UIColor.clear
     }
     
 }
