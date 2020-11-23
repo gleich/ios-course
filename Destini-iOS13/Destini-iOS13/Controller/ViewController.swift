@@ -8,28 +8,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet var questionLabel: UILabel!
     @IBOutlet var option1Button: UIButton!
-    @IBOutlet weak var option2Button: UIButton!
-    
+    @IBOutlet var option2Button: UIButton!
+
     var story = Story()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setCurrentQuestion()
     }
 
-    @IBAction func optionOne(_ sender: UIButton) {
+    @IBAction func optionPressed(_ sender: UIButton) {
         story.changeStep(choice: sender.currentTitle!)
         setCurrentQuestion()
     }
-    
-    @IBAction func optionTwo(_ sender: UIButton) {
-        story.changeStep(choice: sender.currentTitle!)
-        setCurrentQuestion()
-    }
-    
-    
+
     func setCurrentQuestion() {
         let step = story.getStep()
         questionLabel.text = step.title
