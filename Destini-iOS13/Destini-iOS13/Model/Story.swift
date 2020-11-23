@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StoryBrain {
+struct Story {
     let story = [
         Step(
             title: "Your car has blown a tire on a winding road in the middle of nowhere with no cell phone reception. You decide to hitchhike. A rusty pickup truck rumbles to a stop next to you. A man with a wide brimmed hat with soulless eyes opens the passenger door for you and asks: 'Need a ride, boy?'.",
@@ -45,9 +45,10 @@ struct StoryBrain {
     func getStep() -> Step {
         return story[currentStep]
     }
-    
+
     mutating func changeStep(choice: String) {
         let step = story[currentStep]
+
         if choice == step.choice1 {
             currentStep = step.choice1Destination
         } else {

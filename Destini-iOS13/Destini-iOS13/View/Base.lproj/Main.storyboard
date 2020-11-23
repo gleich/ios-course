@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="vi5-5L-IdM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="vi5-5L-IdM">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6uD-Vy-k4h">
@@ -26,7 +26,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJm-Oa-EJp">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="426"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1c7-g7-lQV">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1c7-g7-lQV">
                                                 <rect key="frame" x="30" y="35" width="94" height="361"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -52,6 +52,9 @@
                                                         <state key="normal" title="Option 1" backgroundImage="choice1Background">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="optionOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EKC-pd-AXI"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -70,6 +73,9 @@
                                                         <state key="normal" title="Option 1" backgroundImage="choice2Background">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="optionTwo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9cx-o8-Dpd"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -77,7 +83,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="btO-Uc-wl6" secondAttribute="bottom" constant="68.5" id="0ut-7O-ILa"/>
                                                     <constraint firstItem="btO-Uc-wl6" firstAttribute="leading" secondItem="UQS-zu-yca" secondAttribute="leading" constant="30" id="V07-Ld-6aG"/>
                                                     <constraint firstItem="btO-Uc-wl6" firstAttribute="top" secondItem="UQS-zu-yca" secondAttribute="top" constant="-0.5" id="cjs-EX-Crf"/>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="btO-Uc-wl6" secondAttribute="trailing" symbolic="YES" id="hkP-LP-FjD"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="btO-Uc-wl6" secondAttribute="trailing" constant="20" symbolic="YES" id="hkP-LP-FjD"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -98,6 +104,11 @@
                             <constraint firstItem="vi5-5L-IdM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sKA-ez-Gk0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="option1Button" destination="vKw-j2-Taf" id="95s-f8-pZY"/>
+                        <outlet property="option2Button" destination="btO-Uc-wl6" id="vxp-L1-vFf"/>
+                        <outlet property="questionLabel" destination="1c7-g7-lQV" id="h1i-X6-ykX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
