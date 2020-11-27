@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CalculateViewController.swift
 //  BMI Calculator
 //
 //  Created by Matthew Gleich on 11/22/2020
