@@ -8,14 +8,18 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
-    var bmiValue: String?
+    var bmiValue: String = "0.0"
+    var advice: String = ""
+    var color: UIColor = .black
 
     @IBOutlet var bmiValueLabel: UILabel!
     @IBOutlet var adviceLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        bmiValueLabel.text = bmiValue!
+        bmiValueLabel.text = bmiValue
+        adviceLabel.text = advice
+        view.backgroundColor = color
     }
 
     @IBAction func recalculatePressed(_ sender: UIButton) {
