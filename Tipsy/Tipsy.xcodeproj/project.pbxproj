@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C2E7ADB257F3D1000B7D703 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2E7ADA257F3D1000B7D703 /* ResultsViewController.swift */; };
+		1C50F0A82583314000E586B9 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F0A72583314000E586B9 /* Tip.swift */; };
 		1CC24BCA25736C0000C064AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC24BC925736C0000C064AD /* AppDelegate.swift */; };
 		1CC24BCC25736C0000C064AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC24BCB25736C0000C064AD /* SceneDelegate.swift */; };
 		1CC24BCE25736C0000C064AD /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC24BCD25736C0000C064AD /* SelectionViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		1C2E7ADA257F3D1000B7D703 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		1C50F0A72583314000E586B9 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		1CC24BC625736C0000C064AD /* Tipsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CC24BC925736C0000C064AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CC24BCB25736C0000C064AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		1C50F0AA2583314300E586B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1C50F0A72583314000E586B9 /* Tip.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1CC24BBD25736C0000C064AD = {
 			isa = PBXGroup;
 			children = (
@@ -76,10 +86,11 @@
 		1CC24BC825736C0000C064AD /* Tipsy */ = {
 			isa = PBXGroup;
 			children = (
-				1C2E7AD5257F3B9D00B7D703 /* View */,
 				1CC24BC925736C0000C064AD /* AppDelegate.swift */,
 				1CC24BCB25736C0000C064AD /* SceneDelegate.swift */,
+				1C2E7AD5257F3B9D00B7D703 /* View */,
 				1C2E7AD8257F3C5500B7D703 /* Controller */,
+				1C50F0AA2583314300E586B9 /* Model */,
 				1CC24BD225736C0100C064AD /* Assets.xcassets */,
 				1CC24BD725736C0100C064AD /* Info.plist */,
 			);
@@ -158,6 +169,7 @@
 			files = (
 				1CC24BCE25736C0000C064AD /* SelectionViewController.swift in Sources */,
 				1CC24BCA25736C0000C064AD /* AppDelegate.swift in Sources */,
+				1C50F0A82583314000E586B9 /* Tip.swift in Sources */,
 				1CC24BCC25736C0000C064AD /* SceneDelegate.swift in Sources */,
 				1C2E7ADB257F3D1000B7D703 /* ResultsViewController.swift in Sources */,
 			);

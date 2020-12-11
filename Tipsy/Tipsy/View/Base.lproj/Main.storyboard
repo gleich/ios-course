@@ -66,6 +66,9 @@
                                                         <state key="normal" title="0%">
                                                             <color key="titleColor" red="0.22352941179999999" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="zeroPercentPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NqQ-cP-RBN"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zU6-c8-afo">
                                                         <rect key="frame" x="124.66666666666666" y="0.0" width="124.66666666666666" height="51"/>
@@ -74,6 +77,9 @@
                                                         <state key="normal" title="10%">
                                                             <color key="titleColor" red="0.22352941179999999" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tenPercentPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ncx-kg-wZO"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4a-UW-CxW">
                                                         <rect key="frame" x="249.33333333333329" y="0.0" width="124.66666666666666" height="51"/>
@@ -82,6 +88,9 @@
                                                         <state key="normal" title="20%">
                                                             <color key="titleColor" red="0.22352941179999999" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="twentyPercentPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="07a-QK-oLf"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -102,6 +111,9 @@
                                                     </label>
                                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="cVe-An-3Zi">
                                                         <rect key="frame" x="80" y="0.0" width="94" height="32.666666666666664"/>
+                                                        <connections>
+                                                            <action selector="splitStepperChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ugj-E7-hCl"/>
+                                                        </connections>
                                                     </stepper>
                                                 </subviews>
                                             </stackView>
@@ -125,6 +137,9 @@
                                         <state key="normal" title="Calculate">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="calculateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ay3-yN-hbw"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.87450980392156863" green="0.98039215686274506" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
@@ -151,6 +166,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="billTotalField" destination="bvg-mw-sRS" id="CUs-sv-hLD"/>
+                        <outlet property="highestTipPercentButton" destination="p4a-UW-CxW" id="OIT-ML-oOA"/>
+                        <outlet property="lowestTipPercentButton" destination="FfV-VP-31L" id="ssd-50-LX1"/>
+                        <outlet property="middleTipPercentButton" destination="zU6-c8-afo" id="3FO-fI-Stu"/>
+                        <outlet property="splitLabel" destination="1nS-xc-9km" id="1Bq-Pq-JCz"/>
                         <segue destination="pVx-Fc-RcV" kind="presentation" identifier="goToResults" id="84j-Sx-7Hp"/>
                     </connections>
                 </viewController>
