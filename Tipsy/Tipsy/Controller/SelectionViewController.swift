@@ -50,8 +50,15 @@ class SelectionViewController: UIViewController {
             billTotal: Int(billTotalField?.text ?? "0")!,
             selectedSplit: Int(splitLabel.text ?? "0")!
         )
-        
-        print(tip.getSplit())
-        print(tip.getTotalPerPerson())
+        performSegue(withIdentifier: "goToResults", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResults" {
+            let destinationVC = segue.destination as! ResultsViewController
+            destinationVC.totalPerPerson = tip.getTotalPerPerson()
+            destinationVC.split = tip.getSplit()
+            destinationVC.percentage = tip.getPercent()
+        }
     }
 }

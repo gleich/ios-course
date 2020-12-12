@@ -22,10 +22,14 @@ struct Tip {
     }
     
     func getTotalPerPerson() -> Double {
-        return totalPerPerson!
+        return totalPerPerson ?? 0.0
     }
     
     func getSplit() -> Int {
-        return split!
+        return split ?? 0
+    }
+    
+    func getPercent() -> Int {
+        return Int(percent ?? 0.0 * 100)
     }
 }
