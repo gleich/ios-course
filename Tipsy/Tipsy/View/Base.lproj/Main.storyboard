@@ -242,6 +242,10 @@
                             <constraint firstItem="8tE-zH-Bhx" firstAttribute="top" secondItem="PBP-6b-Ej5" secondAttribute="top" id="soF-du-U7Y"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="EwA-a5-ALf" id="Iz4-y1-1uc"/>
+                        <outlet property="totalPerPersonLabel" destination="2qV-Zn-zzk" id="ZND-8W-Gv0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAS-DY-k7O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

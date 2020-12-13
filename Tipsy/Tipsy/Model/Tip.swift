@@ -14,7 +14,8 @@ struct Tip {
     
     mutating func calculateTotalPerPerson(billTotal: Int, selectedSplit: Int) {
         split = selectedSplit
-        totalPerPerson = (Double(billTotal) * percent!) / Double(split!)
+        let percentV = percent ?? 0.10
+        totalPerPerson = (Double(billTotal) * percentV) / Double(split!)
     }
     
     mutating func setPercent(selectedPercent : Double) {
@@ -30,6 +31,6 @@ struct Tip {
     }
     
     func getPercent() -> Int {
-        return Int(percent ?? 0.0 * 100)
+        return Int((percent ?? 0.10) * 100)
     }
 }

@@ -12,7 +12,12 @@ class ResultsViewController: UIViewController {
     var split: Int = 0
     var percentage: Int = 0
     
+    @IBOutlet weak var totalPerPersonLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        totalPerPersonLabel.text = String(format: "%.2f", totalPerPerson)
+        messageLabel.text = "Split between \(split) people, with \(percentage)% tip"
     }
 }

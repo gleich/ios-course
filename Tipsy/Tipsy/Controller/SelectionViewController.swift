@@ -48,7 +48,7 @@ class SelectionViewController: UIViewController {
     @IBAction func calculateButtonPressed(_ sender: UIButton) {
         tip.calculateTotalPerPerson(
             billTotal: Int(billTotalField?.text ?? "0")!,
-            selectedSplit: Int(splitLabel.text ?? "0")!
+            selectedSplit: Int(splitLabel?.text ?? "0")!
         )
         performSegue(withIdentifier: "goToResults", sender: self)
     }
