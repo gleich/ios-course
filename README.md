@@ -1,3 +1,3 @@
-# ios13-course
+# ios-course
 📱 Apps created during my iOS development course
 
