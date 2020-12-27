@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDelegate {
+class ViewController: UIViewController {
     @IBOutlet var currencyLabel: UILabel!
     @IBOutlet var bitCoinLabel: UILabel!
     @IBOutlet var currencyPicker: UIPickerView!
@@ -24,12 +24,17 @@ class ViewController: UIViewController, UIPickerViewDelegate {
 
 // MARK: - UIPickerViewDataSource
 
-extension ViewController: UIPickerViewDataSource {
+extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return coinManager.currencyArray.count
+        coinManager.currencyArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return coinManager.currencyArray[row]
     }
 }
