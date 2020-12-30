@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             LinearGradient(
-                gradient: Gradient(colors: [.blue, .white]),
+                gradient: Gradient(colors: [.blue, Color("lightBlue")]),
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
@@ -29,15 +29,41 @@ struct ContentView: View {
                     Text("76°")
                         .font(.system(size: 70, weight: .medium))
                         .foregroundColor(.white)
+                }.padding(.bottom, 50)
+
+                HStack(spacing: 20) {
+                    WeatherDayView(dayOfWeek: "MON",
+                                   imageName: "cloud.sun.fill",
+                                   temp: 90)
+
+                    WeatherDayView(dayOfWeek: "TUE",
+                                   imageName: "sun.max.fill",
+                                   temp: 90)
+
+                    WeatherDayView(dayOfWeek: "WED",
+                                   imageName: "wind.snow",
+                                   temp: 90)
+
+                    WeatherDayView(dayOfWeek: "THU",
+                                   imageName: "sunset.fill",
+                                   temp: 90)
+
+                    WeatherDayView(dayOfWeek: "FRI",
+                                   imageName: "snow",
+                                   temp: 90)
+                }
+                Spacer()
+                
+                Button {
+                    print("Tapped")
+                } label: {
+                    Text("Change Day Time")
+                        .frame(width: 280, height: 50)
+                        .background(Color.white)
+                        .font(.system(size: 20, weight: .bold, design: .default))
+                        .cornerRadius(10)
                 }
                 
-                HStack {
-                    WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temp: 90)
-                    WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temp: 90)
-                    WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temp: 90)
-                    WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temp: 90)
-                    WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temp: 90)
-                }
                 Spacer()
             }
         }
@@ -54,7 +80,7 @@ struct WeatherDayView: View {
     var dayOfWeek: String
     var imageName: String
     var temp: Int
-    
+
     var body: some View {
         VStack {
             Text(dayOfWeek)
