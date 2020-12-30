@@ -13,15 +13,11 @@ struct WeatherButton: View {
     var backgroundColor: Color
     
     var body: some View {
-        Button {
-            print(title)
-        } label: {
-            Text("Change Day Time")
-                .frame(width: 280, height: 50)
-                .background(backgroundColor)
-                .foregroundColor(textColor)
-                .font(.system(size: 20, weight: .bold, design: .default))
-                .cornerRadius(10)
-        }
+        Text("Change Day Time")
+            .frame(width: 280, height: 50)
+            .background(backgroundColor)
+            .foregroundColor(textColor)
+            .font(.system(size: 20, weight: .bold, design: .default))
+            .cornerRadius(10)
     }
 }
