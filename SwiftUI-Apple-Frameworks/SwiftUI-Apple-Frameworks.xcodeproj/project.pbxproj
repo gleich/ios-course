@@ -273,6 +273,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Apple-Frameworks/Preview Content\"";
+				DEVELOPMENT_TEAM = FP2H2AD5XG;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "SwiftUI-Apple-Frameworks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -294,6 +295,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Apple-Frameworks/Preview Content\"";
+				DEVELOPMENT_TEAM = FP2H2AD5XG;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "SwiftUI-Apple-Frameworks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
