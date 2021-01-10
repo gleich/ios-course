@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     let framework: Framework
+    @Binding var isShowingDetailView: Bool
 
     var body: some View {
         VStack {
@@ -16,13 +17,14 @@ struct DetailView: View {
                 Spacer()
 
                 Button {
+                    isShowingDetailView = false
                 } label: {
                     Image(systemName: "xmark")
                         .foregroundColor(Color(.label))
                         .imageScale(.large)
                         .frame(width: 44, height: 44)
                 }
-            }.padding(.trailing, 25)
+            }.padding()
             Spacer()
 
             FrameworkView(framework: framework)
@@ -44,6 +46,9 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(framework: MockData.frameworks[0])
+        DetailView(
+            framework: MockData.frameworks[0],
+            isShowingDetailView: .constant(false)
+        )
     }
 }

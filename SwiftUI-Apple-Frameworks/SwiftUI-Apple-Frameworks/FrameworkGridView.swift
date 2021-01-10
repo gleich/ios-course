@@ -8,25 +8,34 @@
 import SwiftUI
 
 struct FrameworkGridView: View {
-//    let columns: [GridItem] = [
-//        GridItem(.flexible()),
-//        GridItem(.flexible()),
-//        GridItem(.flexible()),
-//    ]
+    @StateObject var viewModel = FrameworkGridViewModel()
+    
+    let columns: [GridItem] = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+    ]
 
     var body: some View {
-//        NavigationView {
-//            ScrollView {
-//                LazyVGrid(columns: columns) {
-//                    ForEach(MockData.frameworks) { framework in
-//                        FrameworkView(framework: framework)
-//                    }
-//                }
-//            }
-//            .navigationTitle("🍎 Frameworks")
-//        }
-//    }
-        DetailView(framework: MockData.frameworks[0])
+        NavigationView {
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                    ForEach(MockData.frameworks) { framework in
+                        FrameworkView(framework: framework)
+                            .onTapGesture {
+                                viewModel.selectedFramework = framework
+                            }
+                    }
+                }
+            }
+            .navigationTitle("🍎 Frameworks")
+            .sheet(isPresented: $viewModel.isShowingDetailView) {
+                DetailView(
+                    framework: viewModel.selectedFramework ?? MockData.sampleFramework,
+                    isShowingDetailView: $viewModel.isShowingDetailView
+                )
+            }
+        }
     }
 }
 

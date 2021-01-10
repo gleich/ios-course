@@ -11,11 +11,11 @@ struct AFButton: View {
     let title: String
 
     var body: some View {
-        Text("Learn More")
+        Text(title)
             .font(.title2)
             .fontWeight(.semibold)
             .frame(width: 280, height: 50)
-            .background(Color.red)
+            .background(Color.blue)
             .foregroundColor(.white)
             .cornerRadius(10)
     }
